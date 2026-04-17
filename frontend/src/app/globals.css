@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+/* ── Neo-Brutalist design tokens ─────────────────────────────────────────── */
+:root {
+  --bg:           #FFFCF0;   /* warm off-white */
+  --bg-card:      #FFFFFF;
+  --fg:           #000000;
+  --accent:       #FBBF24;   /* yellow-400 */
+  --border:       #000000;
+  --shadow:       4px 4px 0px 0px #000000;
+  --shadow-sm:    2px 2px 0px 0px #000000;
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+}
+
+.dark {
+  --bg:           #111111;
+  --bg-card:      #1a1a1a;
+  --fg:           #ffffff;
+  --border:       #ffffff;
+  --shadow:       4px 4px 0px 0px rgba(255, 255, 255, 0.75);
+  --shadow-sm:    2px 2px 0px 0px rgba(255, 255, 255, 0.75);
+}
+
+/* ── Base reset ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono), "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Brutalist input focus ring ─────────────────────────────────────────── */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 0;
+}
